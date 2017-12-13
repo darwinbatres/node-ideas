@@ -3,10 +3,10 @@
 # Content
 
 - [Setting Up](#setting-up)
-- Idea Project Start & Express Fundamentals
-- Mongoose & Local MongoDB
-- Local Authentication With Passport
-- [Idea Prep & Deployment](#idea-prep-&-deployment)
+- [Idea Project Start and Express Fundamentals](#idea-project-start-and-express-fundamentals)
+- [Mongoose and Local MongoDB](#mongoose-and-local-mongodb)
+- [Local Authentication With Passport](#local-authentication-with-passport)
+- [Idea Prep & Deployment](#idea-prep-and-deployment)
 
 # Setting Up
 
@@ -17,7 +17,7 @@
 ## Sign Up For mLab
 ## Create a Heroku Account
 
-# Idea Project Start & Express Fundamentals
+# Idea Project Start and Express Fundamentals
 
 ## Idea Project Introduction
 ## Install & Initialize Express
@@ -26,7 +26,7 @@
 ## Working With Templates
 ## Bootstrap & Partials
 
-# Mongoose & Local MongoDB
+# Mongoose and Local MongoDB
 
 ## Install Mongoose & Connect
 ## Create The Idea Model
@@ -52,7 +52,7 @@
 ## Protecting Routes
 ## Access Control
 
-# Idea Prep & Deployment
+# Idea Prep and Deployment
 
 ## Preparing Our App For Deployment
 ## Deploying To Heroku
