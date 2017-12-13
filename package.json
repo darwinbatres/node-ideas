@@ -1,0 +1,34 @@
+{
+  "name": "ideas",
+  "version": "1.0.0",
+  "description": "Simple app to keep track of your Ideas",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darwinbatres/node-ideas.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "ideas",
+    "mongodb"
+  ],
+  "author": "Darwin Batres",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darwinbatres/node-ideas/issues"
+  },
+  "homepage": "https://github.com/darwinbatres/node-ideas#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.5"
+  }
+}
