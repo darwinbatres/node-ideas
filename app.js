@@ -5,8 +5,14 @@ const logger = require('./utils/logger');
 
 const app = express();
 
+require('./middleware/main')(app);
+
 app.get('/', (req, res) => {
-  res.send({ message: 'welcome' });
+  res.render('index', { title: 'Home' });
+});
+
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About' });
 });
 
 app.listen(config.PORT, () => logger.info(`app listening on port ${config.PORT}`));

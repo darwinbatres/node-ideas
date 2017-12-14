@@ -1,6 +1,6 @@
 > Notes
 
-# Content
+## Content
 
 - [Setting Up](#setting-up)
 - [Idea Project Start and Express Fundamentals](#idea-project-start-and-express-fundamentals)
@@ -61,11 +61,38 @@
 # Idea Project Start and Express Fundamentals
 
 ## Idea Project Introduction
+
+- app presentation
+
 ## Install & Initialize Express
+
+- read information from official site
+
 ## Basic Routing & Nodemon
+
+- http verbs in express
+- get, post, put, patch, delete, etc
+- check where global packages `npm root -g`
+
 ## Express Middleware
+
+- functions that have access to the request and response
+- check the official documentation
+- it uses the keyword `use`
+- `app.use(middlewareFunction(req, res, next){ // body })`
+
 ## Working With Templates
+
+- server side rendering (using template engine)
+- `express-handlebars`
+- check the official documentation
+- `ejs`
+- `pug` formerly known as `jade`
+
 ## Bootstrap & Partials
+
+- add Bootstrap from CDN sites
+- learn how to create partials
 
 # Mongoose and Local MongoDB
 
