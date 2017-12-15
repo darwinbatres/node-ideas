@@ -97,11 +97,30 @@
 # Mongoose and Local MongoDB
 
 ## Install Mongoose & Connect
+
+- configure the db connection using mongoose
+
 ## Create The Idea Model
+
+- Create the Idea model with mongoose
+
 ## Add Idea Form
+
+- Create a form for submission
+
 ## Server Side Form Validation
+
+- add server side validations in case client side validations fail
+
 ## Saving Idea To MongoDB
+
+- save the Idea to the db
+- make sure to use `async await`
+
 ## Fetching Ideas From MongoDB
+
+- 
+
 ## Edit Idea Form
 ## Update Idea Data
 ## Remove Idea Data
