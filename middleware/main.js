@@ -5,6 +5,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const passport = require('passport');
 
 module.exports = (app) => {
   app.use(morgan('dev'));
@@ -17,6 +18,10 @@ module.exports = (app) => {
     resave: true,
     saveUninitialized: true,
   }));
+
+  // passport config
+  app.use(passport.initialize());
+  app.use(passport.session());
 
   // flash messages
   app.use(flash());
@@ -31,6 +36,7 @@ module.exports = (app) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
     next();
   });
 };
