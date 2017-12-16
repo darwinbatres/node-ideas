@@ -15,6 +15,10 @@ const IdeaSchema = new Schema({
     type: Date,
     default: Date.now(),
   },
+  userId: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('idea', IdeaSchema);
