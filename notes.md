@@ -167,13 +167,27 @@
 
 ## User Registration
 
-- 
+- add user registration logic/forms
 
 ## Hooking Up A Local Strategy
+
+- connecting local strategy
+
 ## Finishing The Login Functionality
+
+- added logic to connect with `local` strategy
+
 ## Logout Function
+
+- add logout route and logic to handle logout
+
 ## Protecting Routes
+
+- add logic to allow only logged in users to visit `/ideas/*`
+
 ## Access Control
+
+- add new logic so each user can only work on `their` ideas
 
 # Idea Prep and Deployment
 
