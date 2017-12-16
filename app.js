@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
 
 const config = require('./config/main');
 const logger = require('./utils/logger');
@@ -10,6 +11,8 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/ideas', { useMongoClient: true });
+
+require('./config/passport')(passport);
 
 mongoose.connection.on('connected', () => {
   logger.info('connection stablished');
