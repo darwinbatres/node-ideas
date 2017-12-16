@@ -1,6 +1,6 @@
+const passport = require('passport');
 const User = require('../models/User');
 const { validateUser } = require('../helpers/validateUser');
-// const logger = require('../utils/logger');
 
 module.exports.login = (req, res) => res.render('users/login');
 
@@ -29,7 +29,7 @@ module.exports.post = async (req, res) => {
     });
 
     try {
-      const userExist = await User.find({ email });
+      const userExist = await User.findOne({ email });
       if (!userExist) {
         await newUser.save();
         req.flash('success_msg', 'Register successfully, please login now');
@@ -43,4 +43,19 @@ module.exports.post = async (req, res) => {
       res.redirect('/users/register');
     }
   }
+};
+
+module.exports.postLogin = (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/ideas',
+    failureRedirect: '/users/login',
+    failureFlash: true,
+  })(req, res, next);
+};
+
+
+module.exports.logout = (req, res) => {
+  req.logout();
+  req.flash('success_msg', 'You are successfully logged out');
+  res.redirect('/');
 };

@@ -2,7 +2,8 @@ const logger = require('../utils/logger');
 const Idea = require('../models/Idea');
 
 module.exports.getAll = async (req, res) => {
-  const Ideas = await Idea.find().sort({ date: 'desc' });
+  const userId = req.user.id;
+  const Ideas = await Idea.find({ userId }).sort({ date: 'desc' });
   if (Ideas) {
     res.render('ideas/index', { Ideas, title: 'All my Ideas' });
   } else {
@@ -14,10 +15,16 @@ module.exports.getAll = async (req, res) => {
 module.exports.add = (req, res) => res.render('ideas/add');
 
 module.exports.edit = async (req, res) => {
+  const userId = req.user.id;
   const { id } = req.params;
   try {
     const updateIdea = await Idea.findById(id);
-    res.render('ideas/edit', { Idea: updateIdea });
+    if (updateIdea.userId !== userId) {
+      req.flash('error_msg', 'You can only work on your ideas');
+      res.redirect('/ideas');
+    } else {
+      res.render('ideas/edit', { Idea: updateIdea });
+    }
   } catch (err) {
     logger.info(err.message);
     req.flash('error_msg', 'Idea was not found!');
@@ -44,8 +51,9 @@ module.exports.post = async (req, res) => {
   if (errors.length > 0) {
     res.render('ideas/add', { errors });
   } else {
+    const userId = req.user.id;
     try {
-      const tempIdea = new Idea({ title, details });
+      const tempIdea = new Idea({ title, details, userId });
       await tempIdea.save();
       req.flash('success_msg', 'Idea was added successfully!');
     } catch (err) {
@@ -60,6 +68,7 @@ module.exports.post = async (req, res) => {
 module.exports.put = async (req, res) => {
   const errors = [];
   const { id } = req.params;
+  const userId = req.user.id;
   const { title, details } = req.body;
 
   if (!title) {
@@ -79,8 +88,14 @@ module.exports.put = async (req, res) => {
     res.render('ideas/edit', { errors });
   } else {
     try {
-      await Idea.findByIdAndUpdate(id, { title, details }, { new: true });
-      req.flash('success_msg', 'Idea was updated successfully!');
+      const updateIdea = await Idea.findById(id);
+      if (updateIdea.userId !== userId) {
+        req.flash('error_msg', 'You can only work on your ideas');
+        res.redirect('/ideas');
+      } else {
+        await Idea.update({ _id: updateIdea.id }, { title, details });
+        req.flash('success_msg', 'Idea was updated successfully!');
+      }
     } catch (err) {
       logger.info(err.message);
       req.flash('error_msg', 'Idea was not updated!');
@@ -92,8 +107,15 @@ module.exports.put = async (req, res) => {
 
 module.exports.delete = async (req, res) => {
   const { id } = req.params;
+  const userId = req.user.id;
   try {
-    await Idea.findByIdAndRemove(id);
+    const ideaToRemove = await Idea.findById(id);
+    if (ideaToRemove.userId !== userId) {
+      req.flash('error_msg', 'You can only work on your ideas');
+      res.redirect('/ideas');
+    } else {
+      await Idea.deleteOne({ _id: ideaToRemove.id });
+    }
     req.flash('success_msg', 'Idea was removed successfully!');
   } catch (err) {
     logger.info(err.message);
