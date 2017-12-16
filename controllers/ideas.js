@@ -11,9 +11,7 @@ module.exports.getAll = async (req, res) => {
   }
 };
 
-module.exports.add = (req, res) => {
-  res.render('ideas/add');
-};
+module.exports.add = (req, res) => res.render('ideas/add');
 
 module.exports.edit = async (req, res) => {
   const { id } = req.params;
