@@ -140,11 +140,21 @@
 
 - `express-session`
 - `connect-flash`
+- add logic to display flash messages un success scenarios
+- add logic to display flash messages un failure scenarios
 
 # Local Authentication With Passport
 
 ## A Look At Passport
+
+- check `passport` official website
+- `passport`
+- `passport-local`
+
 ## The Express Router
+
+- refactor all routes logic
+
 ## Login & Register Pages
 ## Register Form Validation
 ## User Registration
