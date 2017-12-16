@@ -166,6 +166,9 @@
 - investigate about the other `bcrypt` package
 
 ## User Registration
+
+- 
+
 ## Hooking Up A Local Strategy
 ## Finishing The Login Functionality
 ## Logout Function
