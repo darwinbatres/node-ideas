@@ -1,0 +1,4 @@
+span > form {
+  color: red !important;
+  display: inline-block !important;
+}

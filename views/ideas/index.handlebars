@@ -13,10 +13,40 @@
     <div id="{{id}}" class="collapse" role="tabpanel" aria-labelledby="heading-{{id}}" data-parent="#accordion">
       <div class="card-body">
         {{details}}
+        <br />
+        <span>
+          <a
+            href="/ideas/edit/{{id}}"
+            class="btn btn-warning mt-2"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Edit Idea"
+          >
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </a>
+          <form action="/ideas/{{id}}?_method=delete" method="post" class="show-inline" id="delete-idea">
+            <input type="hidden" name="_method" value="delete">
+            <button
+              type="submit"
+              name="delete"
+              class="btn btn-danger mt-2"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Delete Idea"
+            >
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </form>
+        </span>
+
+
       </div>
     </div>
   </div>
   {{else}}
-  <h2>There are no Ideas created... Create one now!</h2>
+  <div class="jumbotron text-center">
+    <p class="lead">There are no ideas... create one now!</p>
+    <a href="/ideas/add" class="btn btn-primary">Add New Idea</a>
+  </div>
   {{/each}}
 </div>

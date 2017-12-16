@@ -1,0 +1,21 @@
+{{> _errors}}
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title text-center">Edit Idea</h4>
+    <form action="/ideas/{{Idea.id}}?_method=put" method="post">
+      <input type="hidden" name="_method" value="put">
+      <div class="form-group">
+        <label class="col-form-label" for="title">Title:</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="Add Title" required value="{{Idea.title}}">
+      </div>
+      <div class="form-group">
+        <label class="col-form-label" for="details">Add your details</label>
+        <textarea name="details" class="form-control" id="details" placeholder="Add details" required>{{Idea.details}}</textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-success">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

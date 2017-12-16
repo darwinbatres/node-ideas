@@ -119,12 +119,27 @@
 
 ## Fetching Ideas From MongoDB
 
-- 
+- fetch idea from MongoDB
 
 ## Edit Idea Form
+
+- add form for editing Ideas
+
 ## Update Idea Data
+
+- we only have 2 methods for forms, `get and post`
+- `method-override` to the rescue
+- you can also do it using simple `ajax`
+
 ## Remove Idea Data
+
+- add logic to remove an idea
+- make use of `method-override`
+
 ## Flash Messaging
+
+- `express-session`
+- `connect-flash`
 
 # Local Authentication With Passport
 
