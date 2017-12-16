@@ -156,7 +156,15 @@
 - refactor all routes logic
 
 ## Login & Register Pages
+
+- create code for both screens `users/login` and `users/register`
+
 ## Register Form Validation
+
+- create the User model
+- make sure to use `bcryptjs`
+- investigate about the other `bcrypt` package
+
 ## User Registration
 ## Hooking Up A Local Strategy
 ## Finishing The Login Functionality
