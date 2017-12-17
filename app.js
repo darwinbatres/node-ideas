@@ -6,11 +6,12 @@ const config = require('./config/main');
 const logger = require('./utils/logger');
 const middleware = require('./middleware/main');
 const routes = require('./routes/main');
+const dbConfig = require('./config/db');
 
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/ideas', { useMongoClient: true });
+mongoose.connect(dbConfig(), { useMongoClient: true });
 
 require('./config/passport')(passport);
 
