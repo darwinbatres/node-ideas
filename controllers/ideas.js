@@ -3,7 +3,7 @@ const Idea = require('../models/Idea');
 
 module.exports.getAll = async (req, res) => {
   const userId = req.user.id;
-  const Ideas = await Idea.find({ userId }).sort({ date: 'desc' });
+  const Ideas = await Idea.find({ userId }).sort({ date: 'desc' }).limit(10);
   if (Ideas) {
     res.render('ideas/index', { Ideas, title: 'All my Ideas' });
   } else {
