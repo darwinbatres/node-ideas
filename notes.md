@@ -203,4 +203,21 @@
 
 ## Adding A Domain Name
 
-- 
+- not really needed at this point (nice to have)
+
+## next steps (TODOs)
+
+- add search functionality
+- update about page, include link to github repository
+- ~~display only 10 results in main ideas page~~
+- update about page and explain what the app does
+- update read me to show dependencies and dev-dependencies
+- update read me to explain what the app does and what technologies it includes
+- make sure there are no errors while deploying to heroku
+- add pagination
+- limit the amount of characters displayed in main page
+- add new link to display full idea on its own page
+- add error 404 instead of generic json error message
+- make sure all pages have title
+- add validations on UI for applicable pages
+- add test cases
