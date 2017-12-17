@@ -4,7 +4,8 @@
   "description": "Simple app to keep track of your Ideas",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
