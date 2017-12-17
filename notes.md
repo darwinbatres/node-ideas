@@ -192,5 +192,15 @@
 # Idea Prep and Deployment
 
 ## Preparing Our App For Deployment
+
+- prepare script in node package
+- make sure db details are configured for development and production
+
 ## Deploying To Heroku
+
+- make sure everything is added to a `git` repository
+- make sure `heroku toolbelt` is installed
+
 ## Adding A Domain Name
+
+- 
